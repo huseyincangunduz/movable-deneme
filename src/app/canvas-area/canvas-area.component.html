@@ -1,0 +1,27 @@
+<div class="label" #label></div>
+<div style="height: 100vh; width: 100vw;"> 
+
+  <div class="moveable"  (click)="setTarget($event)" (ngInit)="generateFrame($event.currentTarget)">
+    <div class="moveable-inner-styled">
+      <span>Gelecek</span>
+    </div>
+  </div>
+  <div class="moveable"  (click)="setTarget($event)" (ngInit)="generateFrame($event.currentTarget)">
+    <div class="moveable-inner-styled">
+      <span>Şimdi</span>
+    </div>
+  </div>
+  <div class="moveable"  (click)="setTarget($event)" (ngInit)="generateFrame($event.currentTarget)">
+    <div class="moveable-inner-styled">
+      <span>Başlıyor</span>
+    </div>
+  </div>
+
+  <ngx-moveable #moveable [target]="target" [draggable]="true" [origin]="true" [rotatable]="true" [pinchable]="true"
+    [scalable]="scalable" [resizable]="resizable" [warpable]="true" [keepRatio]="false" [throttleDrag]="1"
+    [throttleScale]="0.01" [throttleRotate]="0.2" [throttleResize]="1" (drag)="onDrag($event)" (resize)="onResize($event)"
+    (scale)="onScale($event)" (warp)="onWarp($event)" (rotate)="onRotate($event)" (pinch)="onPinch($event)"
+    (dragEnd)="onEnd()" (resizeEnd)="onEnd()" (scaleEnd)="onEnd()" (warpEnd)="onEnd()" (rotateEnd)="onEnd()"
+    (pinchEnd)="onEnd()">
+  </ngx-moveable>
+</div>
